@@ -1,6 +1,6 @@
 <div align="center">
 
-<<<<<<< HEAD
+
 > Totem digital interativo para uso em tela de quiosque escolar.  
 > Desenvolvido para o **Centro de Educacional Felinto Elisio (CEFE) de Jardim do Seridó – RN**.
 =======
