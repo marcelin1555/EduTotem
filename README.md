@@ -4,13 +4,13 @@
 > Totem digital interativo para uso em tela de quiosque escolar.  
 > Desenvolvido para o **Centro de Educacional Felinto Elisio (CEFE) de Jardim do Seridó – RN**.
 =======
-<img src="https://raw.githubusercontent.com/marcelin1555/EduTotem/main/assets/logo.png" width="120" alt="CEFE Logo" />
+<img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgi-TzRzeQBqxRq0cbufWKFmmyEzS7DBLZd-NQk_Gk1Ri1kd6BngHB7z9CgcZH5S6hVMmr9NCFxqpuxmfwilH18LVQH5g1i11uoc3MvbYlwtvqqONqRhCcHbmkSlxZHoZUqkH-xrYzOz3I/s320/S%25C3%258DMBOLO+DO+CEFE.+SEM+PLANO+DE+FUNDO.png" width="120" alt="CEFE Logo" />
 
 # 🖥️ EduTotem
 
 ### Sistema Digital Interativo para Ambiente Escolar
 
-**CEFE · Centro de Ensino · Jardim do Seridó — RN**
+**CEFE · Centro Educacional Felinto elsio · Jardim do Seridó — RN**
 >>>>>>> b6f3cf9 (feat: EduTotem v1.0.0 - sistema completo + README profissional)
 
 ---
