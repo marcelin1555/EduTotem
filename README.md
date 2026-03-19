@@ -34,7 +34,7 @@ Basta abrir o arquivo `index.html` em qualquer navegador moderno. Nenhuma instal
 
 ```bash
 # Clone o repositório
-git clone https://github.com/SEU_USUARIO/edutotem.git
+git clone https://github.com/marcelin1555/EduTotem.git
 
 # Abra o arquivo
 cd edutotem
