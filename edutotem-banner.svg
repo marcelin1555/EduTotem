@@ -1,0 +1,318 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 420" width="900" height="420" style="font-family: monospace;">
+
+  <!-- Background -->
+  <rect width="900" height="420" fill="#040D1A"/>
+
+  <!-- Grid background -->
+  <defs>
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#0a1a2e" stroke-width="1"/>
+    </pattern>
+  </defs>
+  <rect width="900" height="420" fill="url(#grid)" opacity="0.6"/>
+
+  <!-- Glow radial -->
+  <radialGradient id="glow1" cx="25%" cy="35%" r="40%">
+    <stop offset="0%" stop-color="#0078D4" stop-opacity="0.18"/>
+    <stop offset="100%" stop-color="#0078D4" stop-opacity="0"/>
+  </radialGradient>
+  <radialGradient id="glow2" cx="70%" cy="60%" r="35%">
+    <stop offset="0%" stop-color="#00E5A0" stop-opacity="0.07"/>
+    <stop offset="100%" stop-color="#00E5A0" stop-opacity="0"/>
+  </radialGradient>
+  <rect width="900" height="420" fill="url(#glow1)"/>
+  <rect width="900" height="420" fill="url(#glow2)"/>
+
+  <!-- Stars -->
+  <rect x="42"  y="18"  width="3" height="3" fill="#ffffff" opacity="0.8"/>
+  <rect x="120" y="35"  width="2" height="2" fill="#ffffff" opacity="0.5"/>
+  <rect x="200" y="12"  width="3" height="3" fill="#00C6FF" opacity="0.6"/>
+  <rect x="310" y="28"  width="2" height="2" fill="#ffffff" opacity="0.4"/>
+  <rect x="440" y="8"   width="3" height="3" fill="#ffffff" opacity="0.7"/>
+  <rect x="560" y="22"  width="2" height="2" fill="#00C6FF" opacity="0.5"/>
+  <rect x="650" y="15"  width="3" height="3" fill="#ffffff" opacity="0.6"/>
+  <rect x="750" y="30"  width="2" height="2" fill="#ffffff" opacity="0.4"/>
+  <rect x="830" y="10"  width="3" height="3" fill="#00C6FF" opacity="0.7"/>
+  <rect x="88"  y="55"  width="2" height="2" fill="#ffffff" opacity="0.3"/>
+  <rect x="380" y="45"  width="2" height="2" fill="#ffffff" opacity="0.5"/>
+  <rect x="700" y="50"  width="3" height="3" fill="#ffffff" opacity="0.4"/>
+  <rect x="860" y="42"  width="2" height="2" fill="#00C6FF" opacity="0.5"/>
+  <rect x="25"  y="80"  width="2" height="2" fill="#ffffff" opacity="0.3"/>
+  <rect x="500" y="60"  width="2" height="2" fill="#ffffff" opacity="0.4"/>
+
+  <!-- Floor pixel -->
+  <rect x="0"   y="390" width="150" height="12" fill="#0D1E35"/>
+  <rect x="150" y="390" width="150" height="12" fill="#112240"/>
+  <rect x="300" y="390" width="150" height="12" fill="#0D1E35"/>
+  <rect x="450" y="390" width="150" height="12" fill="#112240"/>
+  <rect x="600" y="390" width="150" height="12" fill="#0D1E35"/>
+  <rect x="750" y="390" width="150" height="12" fill="#112240"/>
+  <rect x="0"   y="402" width="900" height="18" fill="#071422"/>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- TÍTULO / LABELS (esquerda)     -->
+  <!-- ═══════════════════════════════ -->
+
+  <!-- EDU -->
+  <text x="60" y="120" font-family="monospace" font-size="52" font-weight="900" fill="#00C6FF"
+        style="paint-order:stroke" stroke="#003a6e" stroke-width="4" letter-spacing="4">EDU</text>
+  <!-- TOTEM -->
+  <text x="60" y="175" font-family="monospace" font-size="52" font-weight="900" fill="#00C6FF"
+        style="paint-order:stroke" stroke="#003a6e" stroke-width="4" letter-spacing="4">TOTEM</text>
+
+  <!-- Subtítulo -->
+  <text x="62" y="200" font-family="monospace" font-size="10" fill="#FFD166" letter-spacing="3">CEFE · JARDIM DO SERIDÓ · RN</text>
+
+  <!-- Tagline -->
+  <text x="62" y="226" font-family="monospace" font-size="8" fill="#3D6480" letter-spacing="2">TOTEM DIGITAL ESCOLAR · NFC · QUIOSQUE</text>
+
+  <!-- Badges pixel -->
+  <!-- HTML5 -->
+  <rect x="62"  y="242" width="56" height="20" fill="#001f40"/>
+  <rect x="62"  y="242" width="56" height="20" fill="none" stroke="#0078D4" stroke-width="2"/>
+  <rect x="64"  y="260" width="52" height="2"  fill="#003a6e"/>
+  <text x="90"  y="256" font-family="monospace" font-size="8" fill="#00C6FF" text-anchor="middle" letter-spacing="1">HTML5</text>
+
+  <!-- NFC -->
+  <rect x="126" y="242" width="44" height="20" fill="#001f14"/>
+  <rect x="126" y="242" width="44" height="20" fill="none" stroke="#00b37a" stroke-width="2"/>
+  <rect x="128" y="260" width="40" height="2"  fill="#004030"/>
+  <text x="148" y="256" font-family="monospace" font-size="8" fill="#00E5A0" text-anchor="middle" letter-spacing="1">NFC</text>
+
+  <!-- OFFLINE -->
+  <rect x="178" y="242" width="62" height="20" fill="#1f1400"/>
+  <rect x="178" y="242" width="62" height="20" fill="none" stroke="#cc9900" stroke-width="2"/>
+  <rect x="180" y="260" width="58" height="2"  fill="#664400"/>
+  <text x="209" y="256" font-family="monospace" font-size="8" fill="#FFD166" text-anchor="middle" letter-spacing="1">OFFLINE</text>
+
+  <!-- v1.0 -->
+  <rect x="248" y="242" width="44" height="20" fill="#1f0010"/>
+  <rect x="248" y="242" width="44" height="20" fill="none" stroke="#cc2244" stroke-width="2"/>
+  <rect x="250" y="260" width="40" height="2"  fill="#660020"/>
+  <text x="270" y="256" font-family="monospace" font-size="8" fill="#FF4D6D" text-anchor="middle" letter-spacing="1">v1.0</text>
+
+  <!-- Stats -->
+  <text x="68"  y="305" font-family="monospace" font-size="28" font-weight="900" fill="#00E5A0" style="paint-order:stroke" stroke="#003a20" stroke-width="3">6</text>
+  <text x="68"  y="320" font-family="monospace" font-size="7"  fill="#3D6480" letter-spacing="1">MÓDULOS</text>
+
+  <text x="128" y="305" font-family="monospace" font-size="28" font-weight="900" fill="#00E5A0" style="paint-order:stroke" stroke="#003a20" stroke-width="3">1</text>
+  <text x="128" y="320" font-family="monospace" font-size="7"  fill="#3D6480" letter-spacing="1">ARQUIVO</text>
+
+  <text x="188" y="305" font-family="monospace" font-size="28" font-weight="900" fill="#00E5A0" style="paint-order:stroke" stroke="#003a20" stroke-width="3">∞</text>
+  <text x="188" y="320" font-family="monospace" font-size="7"  fill="#3D6480" letter-spacing="1">ALUNOS</text>
+
+  <!-- URL -->
+  <text x="62" y="375" font-family="monospace" font-size="8" fill="#1a3a5c" letter-spacing="2">github.com/marcelin1555/EduTotem</text>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- TOTEM PIXEL (centro)           -->
+  <!-- ═══════════════════════════════ -->
+
+  <!-- Corpo do totem -->
+  <rect x="480" y="80"  width="200" height="300" fill="#0D1E35"/>
+  <rect x="480" y="80"  width="200" height="300" fill="none" stroke="#1a3a5c" stroke-width="4"/>
+  <!-- Sombra pixel -->
+  <rect x="484" y="376" width="200" height="4"   fill="#000000" opacity="0.5"/>
+  <!-- Highlight top -->
+  <rect x="480" y="80"  width="200" height="4"   fill="#2a5a8c" opacity="0.5"/>
+  <!-- Highlight left -->
+  <rect x="480" y="80"  width="4"   height="300" fill="#2a5a8c" opacity="0.3"/>
+
+  <!-- Tela (bordas) -->
+  <rect x="492" y="92"  width="176" height="256" fill="#040D1A"/>
+  <rect x="492" y="92"  width="176" height="256" fill="none" stroke="#0078D4" stroke-width="3"/>
+  <!-- Glow tela -->
+  <rect x="492" y="92"  width="176" height="256" fill="none" stroke="#00C6FF" stroke-width="1" opacity="0.3"/>
+
+  <!-- Scanlines -->
+  <rect x="492" y="96"  width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="102" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="108" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="114" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="120" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="126" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="132" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="138" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="144" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="150" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="156" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="162" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="168" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="174" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="180" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="186" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="192" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="198" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="204" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="210" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="216" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="222" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="228" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="234" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="240" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="246" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="252" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="258" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="264" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="270" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="276" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="282" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="288" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="294" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="300" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="306" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="312" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="318" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="324" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="330" width="176" height="2" fill="#071422" opacity="0.5"/>
+  <rect x="492" y="336" width="176" height="2" fill="#071422" opacity="0.5"/>
+
+  <!-- Topbar da tela -->
+  <rect x="492" y="92"  width="176" height="22" fill="#071422"/>
+  <rect x="492" y="112" width="176" height="2"  fill="#0078D4"/>
+  <text x="500" y="107" font-family="monospace" font-size="7" fill="#FFD166" letter-spacing="1">EDUTOTEM</text>
+  <text x="640" y="107" font-family="monospace" font-size="7" fill="#00C6FF">14:32</text>
+
+  <!-- Status dot -->
+  <rect x="653" y="94"  width="6"  height="6"  fill="#00E5A0"/>
+  <rect x="655" y="96"  width="2"  height="2"  fill="#007050"/>
+
+  <!-- Módulo 1: Salas (destaque) -->
+  <rect x="500" y="122" width="50" height="44" fill="#003d80"/>
+  <rect x="500" y="122" width="50" height="44" fill="none" stroke="#00C6FF" stroke-width="2"/>
+  <rect x="500" y="122" width="50" height="3"  fill="#00C6FF"/>
+  <text x="525" y="143" font-family="monospace" font-size="16" text-anchor="middle">🏫</text>
+  <text x="525" y="161" font-family="monospace" font-size="6"  fill="#00C6FF" text-anchor="middle" letter-spacing="1">SALAS</text>
+
+  <!-- Módulo 2: Cardápio -->
+  <rect x="558" y="122" width="50" height="44" fill="#112240"/>
+  <rect x="558" y="122" width="50" height="44" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+  <text x="583" y="143" font-family="monospace" font-size="16" text-anchor="middle">🍽️</text>
+  <text x="583" y="161" font-family="monospace" font-size="6"  fill="#7DA5CC" text-anchor="middle" letter-spacing="1">CARDÁP.</text>
+
+  <!-- Módulo 3: Eventos -->
+  <rect x="616" y="122" width="50" height="44" fill="#112240"/>
+  <rect x="616" y="122" width="50" height="44" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+  <text x="641" y="143" font-family="monospace" font-size="16" text-anchor="middle">📅</text>
+  <text x="641" y="161" font-family="monospace" font-size="6"  fill="#7DA5CC" text-anchor="middle" letter-spacing="1">EVENTOS</text>
+
+  <!-- Módulo 4: Biblioteca -->
+  <rect x="500" y="174" width="50" height="44" fill="#112240"/>
+  <rect x="500" y="174" width="50" height="44" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+  <text x="525" y="195" font-family="monospace" font-size="16" text-anchor="middle">📚</text>
+  <text x="525" y="213" font-family="monospace" font-size="6"  fill="#7DA5CC" text-anchor="middle" letter-spacing="1">BIBLIOT.</text>
+
+  <!-- Módulo 5: Transporte -->
+  <rect x="558" y="174" width="50" height="44" fill="#112240"/>
+  <rect x="558" y="174" width="50" height="44" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+  <text x="583" y="195" font-family="monospace" font-size="16" text-anchor="middle">🚌</text>
+  <text x="583" y="213" font-family="monospace" font-size="6"  fill="#7DA5CC" text-anchor="middle" letter-spacing="1">TRANSP.</text>
+
+  <!-- Módulo 6: Admin -->
+  <rect x="616" y="174" width="50" height="44" fill="#112240"/>
+  <rect x="616" y="174" width="50" height="44" fill="none" stroke="#1a3a5c" stroke-width="2"/>
+  <text x="641" y="195" font-family="monospace" font-size="16" text-anchor="middle">⚙️</text>
+  <text x="641" y="213" font-family="monospace" font-size="6"  fill="#7DA5CC" text-anchor="middle" letter-spacing="1">ADMIN</text>
+
+  <!-- Status bar -->
+  <rect x="500" y="226" width="166" height="24" fill="#071422"/>
+  <rect x="500" y="226" width="166" height="24" fill="none" stroke="#00E5A0" stroke-width="1" opacity="0.4"/>
+  <rect x="506" y="235" width="6"   height="6"  fill="#00E5A0"/>
+  <text x="520" y="243" font-family="monospace" font-size="6" fill="#00E5A0" letter-spacing="1">SISTEMA OK · 3 SALAS LIVRES</text>
+
+  <!-- NFC bar -->
+  <rect x="500" y="258" width="166" height="28" fill="#071422"/>
+  <rect x="500" y="258" width="166" height="28" fill="none" stroke="#0078D4" stroke-width="1" stroke-dasharray="4 2"/>
+  <text x="508" y="274" font-family="monospace" font-size="14">🪪</text>
+  <text x="530" y="271" font-family="monospace" font-size="6" fill="#7DA5CC" letter-spacing="1">APROXIME O CARTÃO NFC</text>
+  <text x="530" y="281" font-family="monospace" font-size="5" fill="#3D6480" letter-spacing="1">PARA FAZER LOGIN</text>
+
+  <!-- Info bar login -->
+  <rect x="500" y="294" width="166" height="50" fill="#071422"/>
+  <rect x="504" y="298" width="80"  height="8"  fill="#112240" rx="2"/>
+  <rect x="504" y="312" width="60"  height="8"  fill="#112240" rx="2"/>
+  <text x="544" y="306" font-family="monospace" font-size="6" fill="#3D6480" text-anchor="middle">MATRÍCULA</text>
+  <text x="534" y="320" font-family="monospace" font-size="6" fill="#3D6480" text-anchor="middle">SENHA</text>
+  <rect x="592" y="298" width="70"  height="22" fill="#0078D4"/>
+  <rect x="592" y="298" width="70"  height="22" fill="none" stroke="#00C6FF" stroke-width="2"/>
+  <rect x="592" y="318" width="70"  height="2"  fill="#003a6e"/>
+  <text x="627" y="313" font-family="monospace" font-size="7" fill="#fff" text-anchor="middle" letter-spacing="1">ENTRAR</text>
+
+  <!-- Pedestal -->
+  <rect x="530" y="380" width="100" height="10" fill="#1a3a5c"/>
+  <rect x="530" y="380" width="100" height="4"  fill="#2a5a8c" opacity="0.4"/>
+  <rect x="530" y="386" width="100" height="4"  fill="#071422" opacity="0.5"/>
+  <rect x="510" y="388" width="140" height="8"  fill="#0f2a45"/>
+  <rect x="510" y="388" width="140" height="3"  fill="#1a3a5c" opacity="0.4"/>
+
+  <!-- ═══════════════════════════════ -->
+  <!-- PERSONAGEM PIXEL (direita)     -->
+  <!-- ═══════════════════════════════ -->
+
+  <!-- Cabelo -->
+  <rect x="790" y="190" width="40" height="6"  fill="#FFD166"/>
+  <rect x="786" y="196" width="48" height="4"  fill="#FFD166"/>
+
+  <!-- Cabeça -->
+  <rect x="786" y="200" width="48" height="36" fill="#FDBCB4"/>
+  <!-- Olhos -->
+  <rect x="794" y="212" width="10" height="8"  fill="#071422"/>
+  <rect x="816" y="212" width="10" height="8"  fill="#071422"/>
+  <!-- Brilho olhos -->
+  <rect x="796" y="213" width="3"  height="3"  fill="#ffffff" opacity="0.6"/>
+  <rect x="818" y="213" width="3"  height="3"  fill="#ffffff" opacity="0.6"/>
+  <!-- Boca -->
+  <rect x="798" y="228" width="24" height="6"  fill="#cc7055"/>
+  <rect x="800" y="226" width="4"  height="2"  fill="#FDBCB4"/>
+  <rect x="816" y="226" width="4"  height="2"  fill="#FDBCB4"/>
+
+  <!-- Pescoço -->
+  <rect x="800" y="236" width="14" height="8"  fill="#FDBCB4"/>
+
+  <!-- Camiseta CEFE azul -->
+  <rect x="778" y="244" width="64" height="48" fill="#0078D4"/>
+  <!-- Detalhe camiseta -->
+  <rect x="786" y="250" width="48" height="16" fill="#005fa3"/>
+  <text x="810" y="262" font-family="monospace" font-size="7" fill="#00C6FF" text-anchor="middle">CEFE</text>
+  <!-- Botões -->
+  <rect x="808" y="270" width="4"  height="4"  fill="#003d80"/>
+  <rect x="808" y="278" width="4"  height="4"  fill="#003d80"/>
+
+  <!-- Braços -->
+  <rect x="762" y="244" width="16" height="36" fill="#0060b0"/>
+  <rect x="842" y="244" width="16" height="36" fill="#0060b0"/>
+  <!-- Mãos -->
+  <rect x="762" y="278" width="16" height="10" fill="#FDBCB4"/>
+  <rect x="842" y="278" width="16" height="10" fill="#FDBCB4"/>
+
+  <!-- Calça -->
+  <rect x="782" y="292" width="22" height="60" fill="#112240"/>
+  <rect x="816" y="292" width="22" height="60" fill="#112240"/>
+  <!-- Linha calça -->
+  <rect x="804" y="292" width="12" height="4"  fill="#0a1a30"/>
+
+  <!-- Sapatos -->
+  <rect x="778" y="350" width="26" height="10" fill="#071422"/>
+  <rect x="812" y="350" width="26" height="10" fill="#071422"/>
+  <rect x="776" y="356" width="6"  height="4"  fill="#071422"/>
+  <rect x="838" y="356" width="6"  height="4"  fill="#071422"/>
+
+  <!-- Cartão NFC na mão direita -->
+  <rect x="855" y="268" width="34" height="24" fill="#FFD166"/>
+  <rect x="855" y="268" width="34" height="24" fill="none" stroke="#cc9900" stroke-width="2"/>
+  <rect x="857" y="270" width="30" height="4"  fill="#cc9900" opacity="0.5"/>
+  <rect x="857" y="278" width="20" height="2"  fill="#cc9900" opacity="0.4"/>
+  <rect x="857" y="283" width="24" height="2"  fill="#cc9900" opacity="0.3"/>
+  <text x="872" y="264" font-family="monospace" font-size="5" fill="#FFD166" text-anchor="middle">NFC</text>
+
+  <!-- Ondas NFC pixel -->
+  <rect x="730" y="274" width="8"  height="3"  fill="#00C6FF" opacity="0.9"/>
+  <rect x="740" y="272" width="12" height="3"  fill="#00C6FF" opacity="0.7"/>
+  <rect x="754" y="270" width="6"  height="3"  fill="#00C6FF" opacity="0.5"/>
+
+  <!-- Seta apontando pro totem -->
+  <rect x="686" y="272" width="6" height="4" fill="#00C6FF" opacity="0.6"/>
+  <rect x="682" y="270" width="4" height="8" fill="#00C6FF" opacity="0.4"/>
+  <rect x="678" y="268" width="4" height="12" fill="#00C6FF" opacity="0.2"/>
+
+</svg>
