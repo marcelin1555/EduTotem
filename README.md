@@ -22,7 +22,7 @@
 
 <br/>
 
-![Preview EduTotem](edutotem-banner)
+![Preview EduTotem](edutotem-banner.svg)
 
 </div>
 
