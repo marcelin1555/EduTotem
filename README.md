@@ -11,7 +11,7 @@
 ### Sistema Digital Interativo para Ambiente Escolar
 
 **CEFE · Centro Educacional Felinto elsio · Jardim do Seridó — RN**
->>>>>>> b6f3cf9 (feat: EduTotem v1.0.0 - sistema completo + README profissional)
+>>>>>>>  (feat: EduTotem v1.0.0 - sistema completo + README profissional)
 
 ---
 
@@ -348,3 +348,4 @@ Desenvolvido com 💙 para a comunidade escolar de **Jardim do Seridó – RN**
 [![CEFE](https://img.shields.io/badge/Escola-CEFE_Jardim_do_Seridó-22D3EE?style=flat-square)](https://github.com/marcelin1555/EduTotem)
 
 </div>
+
