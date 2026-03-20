@@ -10,7 +10,7 @@
 
 ### Sistema Digital Interativo para Ambiente Escolar
 
-**CEFE · Centro Educacional Felinto elsio · Jardim do Seridó — RN**
+**CEFE · Centro Educacional Felinto Elsio · Jardim do Seridó — RN**
 >>>>>>>  (feat: EduTotem v1.0.0 - sistema completo + README profissional)
 
 ---
