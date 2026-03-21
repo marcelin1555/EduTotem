@@ -30,7 +30,8 @@
 
 ## 🆕 NOVIDADES DA VERSÃO 1.1.0
 
-- 🛡️ **Novo Sistema de Login NFC:** Implementado um Buffer de digitação inteligente que capta de forma responsiva as tags dos cartões RFID enviadas pelo módulo físico sem falsos positivos.
+- 🚶 **Modo Visitante:** Adicionado suporte a acesso público e fácil ao totem sem necessidade de matrícula, com restrições inteligentes e seguras às áreas de Almoço e Perfil.
+- 🛠️ **Revisão do Login NFC:** O simulador de espera antigo foi removido em favor do buffer de digitação inteligente que capta de forma responsiva via hardware as tags dos cartões RFID enviadas pelo módulo físico.
 - 🚧 **Horários UI WIP (Glassmorphism):** A tela estática de "Horários de Aula" foi substituída por um placeholder moderno ("Em Desenvolvimento") com efeitos de pulso, iconografia animada, fundos translúcidos e gradients no estilo Glassmorphism Premium.
 - ☀️ **Integração Dinâmica de Layout:** As saudações do Portal do Aluno renderizam SVG dinâmicos (Sol e Lua) baseados na hora do dia do servidor local.
 - 🎨 **Consistência de Ícones:** Dependências do FontAwesome foram removidas para garantir o funcionamento local (100% offline).
