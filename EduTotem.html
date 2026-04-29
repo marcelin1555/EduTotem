@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>EduTotem — CEFE Jardim do Seridó</title>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@700;800&display=swap" rel="stylesheet">
 <style>
@@ -40,7 +40,7 @@
     /* ── TEXT ── */
     --text:      #F0F9FF;
     --text2:     #94A3B8;
-    --text3:     #334155;
+    --text3:     #64748B;
 
     /* ── RADIUS ── */
     --r:         22px;
@@ -1097,7 +1097,7 @@
   .modal-overlay {
     display:none; position:fixed; inset:0;
     background:rgba(0,0,0,.82); backdrop-filter:blur(8px);
-    z-index:200; align-items:center; justify-content:center;
+    z-index:250; align-items:center; justify-content:center;
   }
   .modal-overlay.show { display:flex; animation:fadeIn .3s ease; }
   .modal-box {
@@ -2493,6 +2493,13 @@ let state = { currentUser:null, lunchConfirmed:false, lastModal:null };
 
 function ls_get(k)      { try{ return JSON.parse(localStorage.getItem(k)); }catch{return null;} }
 function ls_set(k,v)    { localStorage.setItem(k,JSON.stringify(v)); }
+
+function escapeHtml(str) {
+  if(str == null) return '';
+  const d = document.createElement('div');
+  d.textContent = String(str);
+  return d.innerHTML;
+}
 function getClasses()   { return ls_get('et_classes') || JSON.parse(JSON.stringify(DEFAULT_CLASSES)); }
 function saveClasses(d) { ls_set('et_classes',d); refreshClassTabs(); }
 function getRooms()     { return ls_get('et_rooms') || JSON.parse(JSON.stringify(DEFAULT_ROOMS)); }
@@ -2527,7 +2534,7 @@ function updateClock(){
   const lc=document.getElementById('login-clock'); if(lc)lc.textContent=t;
   const g=document.getElementById('greeting');
   if(g&&state.currentUser){
-    const h=now.getHours(); const n=state.currentUser.nome.split(' ')[0];
+    const h=now.getHours(); const n=escapeHtml(state.currentUser.nome.split(' ')[0]);
     const sunSvg = '<span class="svg-icon" style="display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-left:6px;color:#FBBF24"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></span>';
     const moonSvg = '<span class="svg-icon" style="display:inline-flex;align-items:center;justify-content:center;vertical-align:middle;margin-left:6px;color:#818CF8"><svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg></span>';
     const icon = h < 18 ? sunSvg : moonSvg;
@@ -2759,7 +2766,7 @@ function simulateLunchNFC(){ if(!state.currentUser) return; showToast('info','Le
 // ══════════════════════════════════════════
 function renderCardapio(day){
   const g=document.getElementById('menu-grid'); if(!g) return;
-  g.innerHTML=(CARDAPIO[day]||[]).map(i=>`<div class="menu-item"><div class="mi-icon">${i.icon}</div><div class="mi-cat">${i.cat}</div><div class="mi-name">${i.name}</div><div class="mi-desc">${i.desc}</div></div>`).join('');
+  g.innerHTML=(CARDAPIO[day]||[]).map(i=>`<div class="menu-item"><div class="mi-icon">${escapeHtml(i.icon)}</div><div class="mi-cat">${escapeHtml(i.cat)}</div><div class="mi-name">${escapeHtml(i.name)}</div><div class="mi-desc">${escapeHtml(i.desc)}</div></div>`).join('');
 }
 
 function selDay(btn,day){
@@ -2772,7 +2779,7 @@ function selDay(btn,day){
 // ══════════════════════════════════════════
 function renderAvisos(){
   const l=document.getElementById('notices-list'); if(!l) return;
-  l.innerHTML=AVISOS.map(a=>`<div class="notice-card"><div class="nc-bar bar-${a.prio}"></div><div class="nc-body"><span class="nc-tag tag-${a.tag}">${a.tagLabel}</span><div class="nc-title">${a.title}</div><div class="nc-desc">${a.desc}</div><div class="nc-date">📅 ${a.date}</div></div></div>`).join('');
+  l.innerHTML=AVISOS.map(a=>`<div class="notice-card"><div class="nc-bar bar-${escapeHtml(a.prio)}"></div><div class="nc-body"><span class="nc-tag tag-${escapeHtml(a.tag)}">${escapeHtml(a.tagLabel)}</span><div class="nc-title">${escapeHtml(a.title)}</div><div class="nc-desc">${escapeHtml(a.desc)}</div><div class="nc-date">📅 ${escapeHtml(a.date)}</div></div></div>`).join('');
 }
 
 // ══════════════════════════════════════════
@@ -2951,13 +2958,16 @@ function selClass(btn,key){
 function renderRoomsScreen(){
   const g=document.getElementById('rooms-grid'); if(!g) return;
   const rooms=getRooms();
-  g.innerHTML=rooms.map(r=>`<div class="room-card ${r.status} ripple-container" onclick="roomClick('${r.id}',event)">
+  g.innerHTML=rooms.map(r=>`<div class="room-card ${escapeHtml(r.status)} ripple-container" data-room-id="${escapeHtml(r.id)}">
     <div class="rc-dot"></div>
-    <div class="rc-num">${r.name}</div>
+    <div class="rc-num">${escapeHtml(r.name)}</div>
     <div class="rc-status">${r.status==='free'?'🟢 LIVRE':r.status==='occupied'?'🔴 OCUPADA':'🟡 MANUTENÇÃO'}</div>
-    ${r.occupant?`<div class="rc-occupant">👤 ${r.occupant}</div>`:''}
-    <div class="rc-detail">${r.detail}</div>
+    ${r.occupant?`<div class="rc-occupant">👤 ${escapeHtml(r.occupant)}</div>`:''}
+    <div class="rc-detail">${escapeHtml(r.detail)}</div>
   </div>`).join('');
+  g.querySelectorAll('[data-room-id]').forEach(el=>{
+    el.addEventListener('click', function(e){ roomClick(this.dataset.roomId, e); });
+  });
 }
 
 function roomClick(id,e){
@@ -2977,10 +2987,15 @@ const GENERO_CLASSES = { masculino:'gb-masc', feminino:'gb-fem', 'nao-binario':'
 
 function calcIdade(nasc) {
   if(!nasc) return null;
-  const p=nasc.split('/'); if(p.length!==3) return null;
-  const dob=new Date(+p[2],+p[1]-1,+p[0]); const today=new Date();
-  let age=today.getFullYear()-dob.getFullYear();
-  if(today.getMonth()-dob.getMonth()<0||(today.getMonth()===dob.getMonth()&&today.getDate()<dob.getDate())) age--;
+  const p = nasc.split('/');
+  if(p.length !== 3) return null;
+  const day = parseInt(p[0], 10), month = parseInt(p[1], 10), year = parseInt(p[2], 10);
+  if(!day || !month || !year || day < 1 || day > 31 || month < 1 || month > 12 || year < 1900 || year > 2099) return null;
+  const dob = new Date(year, month - 1, day);
+  if(dob.getFullYear() !== year || dob.getMonth() !== month - 1 || dob.getDate() !== day) return null;
+  const today = new Date();
+  let age = today.getFullYear() - dob.getFullYear();
+  if(today.getMonth() - dob.getMonth() < 0 || (today.getMonth() === dob.getMonth() && today.getDate() < dob.getDate())) age--;
   return age;
 }
 
@@ -3013,10 +3028,10 @@ function renderPerfil(){
     const gc = GENERO_CLASSES[p.genero||'nao-informado']||'gb-ni';
     const gl = GENERO_LABELS[p.genero||'nao-informado']||'—';
     tags.innerHTML=`
-      <span class="pi-tag pit-mat">Matrícula: ${u.id}</span>
-      <span class="pi-tag pit-serie">${p.serie||'—'}</span>
-      <span class="pi-tag pit-turma">${p.turma||'—'}</span>
-      <span class="gender-badge ${gc}">${gl}</span>
+      <span class="pi-tag pit-mat">Matrícula: ${escapeHtml(u.id)}</span>
+      <span class="pi-tag pit-serie">${escapeHtml(p.serie||'—')}</span>
+      <span class="pi-tag pit-turma">${escapeHtml(p.turma||'—')}</span>
+      <span class="gender-badge ${escapeHtml(gc)}">${escapeHtml(gl)}</span>
     `;
   }
 
@@ -3644,25 +3659,33 @@ function renderAlunosAdmin() {
   }
   list.innerHTML = keys.map(k => {
     const u = USERS[k];
-    const init = (u.nomeExibicao||u.nome||'?').slice(0,2).toUpperCase();
+    const init = escapeHtml((u.nomeExibicao||u.nome||'?').slice(0,2).toUpperCase());
+    const ek = escapeHtml(k);
     return `<div class="aluno-row">
       <div class="aluno-av">${init}</div>
       <div class="aluno-info">
-        <div class="aluno-name">${u.nome||'—'}</div>
-        <div class="aluno-meta">${u.serie||'—'} · ${u.turma||'—'}</div>
-        <div class="aluno-mat">Matrícula: ${k}</div>
+        <div class="aluno-name">${escapeHtml(u.nome||'—')}</div>
+        <div class="aluno-meta">${escapeHtml(u.serie||'—')} · ${escapeHtml(u.turma||'—')}</div>
+        <div class="aluno-mat">Matrícula: ${ek}</div>
       </div>
       <div class="aluno-actions">
-        <button class="aluno-btn aluno-btn-edit ripple-container" onclick="openEditAluno('${k}')">
+        <button class="aluno-btn aluno-btn-edit ripple-container" data-aluno-key="${ek}" data-action="edit">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
           Editar
         </button>
-        <button class="aluno-btn aluno-btn-del ripple-container" onclick="deleteAluno('${k}')">
+        <button class="aluno-btn aluno-btn-del ripple-container" data-aluno-key="${ek}" data-action="del">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:13px;height:13px"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
         </button>
       </div>
     </div>`;
   }).join('');
+  list.querySelectorAll('[data-aluno-key]').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const key = this.dataset.alunoKey;
+      if(this.dataset.action === 'edit') openEditAluno(key);
+      else deleteAluno(key);
+    });
+  });
   // update count in admin panel
   const admu = document.getElementById('adm-users-count');
   if(admu) admu.textContent = keys.length + ' aluno' + (keys.length!==1?'s':'')+' cadastrado'+(keys.length!==1?'s':'');
@@ -4056,9 +4079,9 @@ function renderCSVPreview(data, headers, filename, errorCount) {
   // rows (show max 50)
   tbody.innerHTML = data.slice(0,50).map(row => {
     const cls = row._error ? 'csv-error-row' : '';
-    const cells = dispHeaders.map(h=>`<td>${row[h]||'—'}</td>`).join('');
+    const cells = dispHeaders.map(h=>`<td>${escapeHtml(row[h]||'—')}</td>`).join('');
     const status = row._error
-      ? `<td style="color:var(--red);font-size:.72rem">❌ ${row._error}</td>`
+      ? `<td style="color:var(--red);font-size:.72rem">❌ ${escapeHtml(row._error)}</td>`
       : `<td style="color:var(--green)">✅</td>`;
     return `<tr class="${cls}">${cells}${status}</tr>`;
   }).join('');
@@ -4367,22 +4390,30 @@ function renderStaffScreen() {
   }
   list.innerHTML = filtered.map(k => {
     const s = staff[k];
-    const init = (s.nome||'?').split(' ').slice(0,2).map(n=>n[0]).join('').toUpperCase();
-    const roleLabel = ROLE_LABELS[s.role]||s.role||'—';
-    const roleClass = ROLE_CLASS[s.role]||'role-aluno';
+    const init = escapeHtml((s.nome||'?').split(' ').slice(0,2).map(n=>n[0]).join('').toUpperCase());
+    const roleLabel = escapeHtml(ROLE_LABELS[s.role]||s.role||'—');
+    const roleClass = escapeHtml(ROLE_CLASS[s.role]||'role-aluno');
+    const ek = escapeHtml(k);
     return `<div class="aluno-row">
       <div class="aluno-av" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">${init}</div>
       <div class="aluno-info">
-        <div class="aluno-name">${s.nome||'—'}</div>
-        <div class="aluno-meta">${s.disciplina||s.setor||'—'} · ${s.email||'—'}</div>
+        <div class="aluno-name">${escapeHtml(s.nome||'—')}</div>
+        <div class="aluno-meta">${escapeHtml(s.disciplina||s.setor||'—')} · ${escapeHtml(s.email||'—')}</div>
         <span class="staff-role-badge ${roleClass}">${roleLabel}</span>
       </div>
       <div class="aluno-actions">
-        <button class="aluno-btn aluno-btn-edit ripple-container" onclick="openEditStaff('${k}')">✏️ Editar</button>
-        <button class="aluno-btn aluno-btn-del ripple-container" onclick="deleteStaff('${k}')">🗑</button>
+        <button class="aluno-btn aluno-btn-edit ripple-container" data-staff-key="${ek}" data-action="edit">✏️ Editar</button>
+        <button class="aluno-btn aluno-btn-del ripple-container" data-staff-key="${ek}" data-action="del">🗑</button>
       </div>
     </div>`;
   }).join('');
+  list.querySelectorAll('[data-staff-key]').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const key = this.dataset.staffKey;
+      if(this.dataset.action === 'edit') openEditStaff(key);
+      else deleteStaff(key);
+    });
+  });
 }
 
 function filterStaff(btn, type) {
@@ -4527,28 +4558,35 @@ function renderAvisosAdmin() {
 
   list.innerHTML = AVISOS.map((a, i) => {
     const color = PRIO_COLORS[a.prio] || 'var(--green)';
-    const label = PRIO_LABELS[a.prio] || 'INFO';
+    const label = escapeHtml(PRIO_LABELS[a.prio] || 'INFO');
     return `<div class="aviso-adm-row">
       <div class="aviso-adm-top">
         <div class="prio-dot" style="background:${color};box-shadow:0 0 6px ${color}"></div>
-        <span class="nc-tag tag-${a.tag}" style="flex-shrink:0">${label}</span>
-        <div class="aviso-adm-title">${a.title}</div>
+        <span class="nc-tag tag-${escapeHtml(a.tag)}" style="flex-shrink:0">${label}</span>
+        <div class="aviso-adm-title">${escapeHtml(a.title)}</div>
       </div>
-      <div class="aviso-adm-desc">${a.desc}</div>
+      <div class="aviso-adm-desc">${escapeHtml(a.desc)}</div>
       <div class="aviso-adm-footer">
-        <span class="aviso-adm-date">📅 ${a.date||'—'}</span>
+        <span class="aviso-adm-date">📅 ${escapeHtml(a.date||'—')}</span>
         <div class="aviso-adm-actions">
-          <button class="av-btn av-btn-edit ripple-container" onclick="openEditAviso(${i})">
+          <button class="av-btn av-btn-edit ripple-container" data-aviso-idx="${i}" data-action="edit">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
             Editar
           </button>
-          <button class="av-btn av-btn-del ripple-container" onclick="deleteAviso(${i})">
+          <button class="av-btn av-btn-del ripple-container" data-aviso-idx="${i}" data-action="del">
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"/><path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/></svg>
           </button>
         </div>
       </div>
     </div>`;
   }).join('');
+  list.querySelectorAll('[data-aviso-idx]').forEach(btn => {
+    btn.addEventListener('click', function(){
+      const idx = parseInt(this.dataset.avisoIdx, 10);
+      if(this.dataset.action === 'edit') openEditAviso(idx);
+      else deleteAviso(idx);
+    });
+  });
 }
 
 function openAddAviso() {
